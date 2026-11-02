@@ -66,7 +66,7 @@ The `-g2012` flag is needed because the code uses `$signed` and `>>>`.
 
 ## Ideas for later
 
-- Add a clock and register the outputs
+- Add a clock and register the outputs (Verify using openSTA)
 - Multiply and rotate operations
 - Run it on an FPGA board with switches for the inputs and LEDs for the result
 - Use it inside a simple CPU
