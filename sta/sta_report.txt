@@ -1,0 +1,66 @@
+Startpoint: b[1] (input port clocked by vclk)
+Endpoint: zero (output port clocked by vclk)
+Path Group: vclk
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock vclk (rise edge)
+   0.000    0.000   clock network delay (ideal)
+   1.000    1.000 v input external delay
+   0.000    1.000 v b[1] (in)
+   0.056    1.056 ^ _415_/ZN (XNOR2_X1)
+   0.025    1.081 v _440_/ZN (OAI21_X1)
+   0.063    1.144 ^ _441_/ZN (AOI22_X1)
+   0.031    1.175 v _375_/ZN (OAI33_X1)
+   0.116    1.291 v _376_/ZN (OR4_X1)
+   0.023    1.314 ^ _392_/ZN (NOR2_X1)
+   0.054    1.369 ^ _393_/ZN (AND4_X1)
+   0.057    1.426 ^ _394_/ZN (AND4_X1)
+   0.027    1.453 v _395_/ZN (OAI211_X1)
+   0.064    1.517 ^ _396_/ZN (NOR4_X1)
+   0.000    1.517 ^ zero (out)
+            1.517   data arrival time
+
+  10.000   10.000   clock vclk (rise edge)
+   0.000   10.000   clock network delay (ideal)
+   0.000   10.000   clock reconvergence pessimism
+  -1.000    9.000   output external delay
+            9.000   data required time
+-----------------------------------------------------------
+            9.000   data required time
+           -1.517   data arrival time
+-----------------------------------------------------------
+            7.483   slack (MET)
+
+
+Startpoint: a[7] (input port clocked by vclk)
+Endpoint: carry (output port clocked by vclk)
+Path Group: vclk
+Path Type: min
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock vclk (rise edge)
+   0.000    0.000   clock network delay (ideal)
+   1.000    1.000 ^ input external delay
+   0.000    1.000 ^ a[7] (in)
+   0.008    1.008 v _269_/ZN (NOR2_X1)
+   0.016    1.024 ^ _461_/ZN (OAI22_X1)
+   0.000    1.024 ^ carry (out)
+            1.024   data arrival time
+
+   0.000    0.000   clock vclk (rise edge)
+   0.000    0.000   clock network delay (ideal)
+   0.000    0.000   clock reconvergence pessimism
+  -1.000   -1.000   output external delay
+           -1.000   data required time
+-----------------------------------------------------------
+           -1.000   data required time
+           -1.024   data arrival time
+-----------------------------------------------------------
+            2.024   slack (MET)
+
+
+wns max 0.00
+tns max 0.00

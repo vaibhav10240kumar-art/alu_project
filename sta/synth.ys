@@ -1,0 +1,7 @@
+read_verilog -sv src/alu.v
+synth -top alu -flatten
+abc -liberty lib/NangateOpenCellLibrary_typical.lib
+opt_clean
+stat -liberty lib/NangateOpenCellLibrary_typical.lib
+write_verilog -noattr sta/alu_netlist.v
+
