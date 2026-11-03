@@ -70,3 +70,15 @@ The `-g2012` flag is needed because the code uses `$signed` and `>>>`.
 - Multiply and rotate operations
 - Run it on an FPGA board with switches for the inputs and LEDs for the result
 - Use it inside a simple CPU
+
+## Timing analysis
+
+Synthesized with Yosys against the Nangate45 library and timed with OpenSTA. The ALU has no clock, so I used a virtual clock (10 ns) with 1 ns input and output delay.
+
+```
+yosys -s sta/synth.ys
+sta -no_splash -exit sta/run_sta.tcl
+```
+
+Critical path: 7.483 ns, worst slack: 2.024 ns, area: 269.990 um^2. Full reports are in `sta/`.
+The library file isn't in the repo. Download it from OpenROAD-flow-scripts (platforms/nangate45).
