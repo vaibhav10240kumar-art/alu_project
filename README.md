@@ -82,3 +82,9 @@ sta -no_splash -exit sta/run_sta.tcl
 
 Critical path: 7.483 ns, worst slack: 2.024 ns, area: 269.990 um^2. Full reports are in `sta/`.
 The library file isn't in the repo. Download it from OpenROAD-flow-scripts (platforms/nangate45).
+
+## Things I learned
+
+- 200 + 100 in 8 bits wraps to 44 and sets carry, but overflow stays 0 because in signed terms it's -56 + 100. Same bits, two different flags.
+- Defaulting every output at the top of the `always` block saves you from accidental latches.
+- A typo in `$display` cost me more time than I'd like to admit.
