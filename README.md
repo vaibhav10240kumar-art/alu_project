@@ -59,6 +59,15 @@ gtkwave sim/alu.vcd
 
 The `-g2012` flag is needed because the code uses `$signed` and `>>>`.
 
+## Flag examples (8-bit)
+
+| a   | b   | op  | result | carry | overflow | zero |
+|-----|-----|-----|--------|-------|----------|------|
+| 200 | 100 | ADD | 44     | 1     | 0        | 0    |
+| 100 | 100 | ADD | 200    | 0     | 1        | 0    |
+| 5   | 5   | SUB | 0      | 0     | 0        | 1    |
+| 3   | 5   | SUB | 254    | 1     | 0        | 0    |
+
 ## Notes
 
 - 200 + 100 in 8 bits wraps around to 44 with carry set. The testbench checks this on purpose.
@@ -88,3 +97,4 @@ The library file isn't in the repo. Download it from OpenROAD-flow-scripts (plat
 - 200 + 100 in 8 bits wraps to 44 and sets carry, but overflow stays 0 because in signed terms it's -56 + 100. Same bits, two different flags.
 - Defaulting every output at the top of the `always` block saves you from accidental latches.
 - A typo in `$display` cost me more time than I'd like to admit.
+
