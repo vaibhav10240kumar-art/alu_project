@@ -79,6 +79,7 @@ The `-g2012` flag is needed because the code uses `$signed` and `>>>`.
 - Multiply and rotate operations
 - Run it on an FPGA board with switches for the inputs and LEDs for the result
 - Use it inside a simple CPU
+- Probably will do floorplanning using openroad to do understand end to edn RTL to GDS design flow
 
 ## Timing analysis
 
